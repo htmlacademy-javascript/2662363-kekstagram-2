@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Александр Абраменков](https://up.htmlacademy.ru/javascript-individual/2/user/2662363).
-* Наставник: `Неизвестно`.
+* Наставник: [Виктория Никитина](https://up.htmlacademy.ru/javascript-individual/2/user/2662363).
 
 ---
 
