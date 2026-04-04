@@ -16,8 +16,8 @@ const verifyPalindrome = (string) => {
 
 // Задача 3
 // Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть NaN:
-// eslint-disable-next-line no-unused-vars
-function stringToNumber = (str) => {
+// eslint-disable-next-line no-unused-vars, no-undef
+function stringToNumber(str) {
   const digits = [...str].filter((item) => item >= '0' && item <= '9').join('');
   return parseInt(digits, 10);
-};
+}
