@@ -1,3 +1,5 @@
+import { openModal } from './big-picture.js';
+
 /* eslint-disable no-console */
 const cardTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const cardsContainer = document.querySelector('.pictures');
@@ -12,6 +14,11 @@ export const renderCards = (pictures) => {
     image.alt = description;
     card.querySelector('.picture__comments').textContent = comments.length;
     card.querySelector('.picture__likes').textContent = likes;
+
+    card.addEventListener('click', () => {
+      openModal({ url, description, comments, likes });
+    });
+
     fragment.append(card);
   });
   cardsContainer.append(fragment);
