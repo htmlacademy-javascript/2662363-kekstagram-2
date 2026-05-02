@@ -1,4 +1,6 @@
 * text eol=lf
+* text=auto
+*.js text eol=lf
 *.jpg -text
 *.png -text
 *.gif -text
