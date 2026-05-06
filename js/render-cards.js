@@ -3,7 +3,7 @@ import { openModal } from './big-picture.js';
 
 /* eslint-disable no-console */
 const cardTemplate = document.querySelector('#picture').content.querySelector('.picture');
-const cardsContainer = document.querySelector('.pictures');
+const cardsContainerNode = document.querySelector('.pictures');
 
 let localPhotos;
 
@@ -20,10 +20,10 @@ export const renderCards = (pictures) => {
     card.dataset.id = id;
     fragment.append(card);
   });
-  cardsContainer.append(fragment);
+  cardsContainerNode.append(fragment);
 };
 
-cardsContainer.addEventListener('click', (evt) => {
+cardsContainerNode.addEventListener('click', (evt) => {
   const card = evt.target.closest('.picture');
   if (card) {
     const id = Number(card.dataset.id);
