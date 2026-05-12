@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
+
 const COMMENTS_STEP = 5;
 const body = document.body;
 const modalNode = document.querySelector('.big-picture');
@@ -24,13 +25,13 @@ const showModal = (isVisible = true) => {
     modalNode.classList.remove('hidden');
     body.classList.add('modal-open');
 
-    // eslint-disable-next-line no-use-before-define
+
     document.addEventListener('keydown', onDocumentKeydown);
     return;
   }
   modalNode.classList.add('hidden');
   body.classList.remove('modal-open');
-  // eslint-disable-next-line no-use-before-define
+
   document.removeEventListener('keydown', onDocumentKeydown);
 };
 
