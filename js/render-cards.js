@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { openModal } from './big-picture.js';
 
-/* eslint-disable no-console */
 const cardTemplate = document.querySelector('#picture').content.querySelector('.picture');
 const cardsContainerNode = document.querySelector('.pictures');
 

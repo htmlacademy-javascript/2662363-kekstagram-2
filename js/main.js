@@ -1,7 +1,13 @@
-import { getPhotos } from './data.js';
+import { getPhotos } from './api.js';
 import { renderCards } from './render-cards.js';
 import './form.js';
+import { showErrorBanner } from './utils.js';
 
-// eslint-disable-next-line no-unused-vars
-const photos = getPhotos(25);
-renderCards(photos);
+getPhotos()
+  .then((photos) => {
+    //set filters
+    renderCards(photos);
+  })
+  .catch(() => {
+    showErrorBanner();
+  });
