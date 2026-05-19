@@ -52,7 +52,7 @@ const getPhoto = (i) => ({
 export const getPhotos = (n) => {
   const photos = [];
   for (let i = 1; i <= n; i++) {
-    photos.push(getPhoto(i));
+    photos.push(getPhoto(i)); // getPhotos(i)
   }
   return photos;
 };

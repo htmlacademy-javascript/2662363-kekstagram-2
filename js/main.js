@@ -1,7 +1,13 @@
-import { getPhotos } from './data.js';
+import { getPhotos } from './api.js';
 import { renderCards } from './render-cards.js';
 import './form.js';
+import { showErrorBannner } from './utils.js';
 
-
-const photos = getPhotos(25);
-renderCards(photos);
+getPhotos()
+  .then((photos) => {
+    //set filters
+    renderCards(photos);
+  })
+  .catch(() => {
+    showErrorBannner();
+  });
