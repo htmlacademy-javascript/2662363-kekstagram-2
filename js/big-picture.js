@@ -1,7 +1,7 @@
 /* eslint-disable no-use-before-define */
 
 const COMMENTS_STEP = 5;
-const body = document.body;
+const bodyNode = document.body;
 const modalNode = document.querySelector('.big-picture');
 const closeButtonNode = modalNode.querySelector('.big-picture__cancel');
 const imageNode = modalNode.querySelector('.big-picture__img img');
@@ -23,14 +23,14 @@ let renderedComments;
 const showModal = (isVisible = true) => {
   if (isVisible) {
     modalNode.classList.remove('hidden');
-    body.classList.add('modal-open');
+    bodyNode.classList.add('modal-open');
 
 
     document.addEventListener('keydown', onDocumentKeydown);
     return;
   }
   modalNode.classList.add('hidden');
-  body.classList.remove('modal-open');
+  bodyNode.classList.remove('modal-open');
 
   document.removeEventListener('keydown', onDocumentKeydown);
 };
