@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 import { Effects, EffectsSettings } from './constans.js';
 
 const sliderNode = document.querySelector('.effect-level__slider');
@@ -8,9 +7,9 @@ const valueNode = document.querySelector('.effect-level__value');
 const sliderContainerNode = document.querySelector('.effect-level');
 
 let currentEffect = Effects.NONE;
-const { slider } = EffectsSettings[currentEffect];
+const sliderSettings = EffectsSettings[currentEffect].slider;
 
-noUiSlider.create(sliderNode, slider);
+noUiSlider.create(sliderNode, sliderSettings);
 
 const render = () => {
   if (currentEffect === Effects.NONE) {

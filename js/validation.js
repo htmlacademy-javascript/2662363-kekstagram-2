@@ -1,10 +1,10 @@
-const formNode = document.querySelector('#upload-select-image');
-const descriptionNode = formNode.querySelector('.text__description');
-const hashtagsNode = formNode.querySelector('.text__hashtags');
-
 const MAX_DESCRIPTION = 140;
 const HASHTAG_FORMULA = /^#[a-zа-я0-9]{1,19}$/i;
 const MAX_HASHTAGS = 5;
+
+const formNode = document.querySelector('#upload-select-image');
+const descriptionNode = formNode.querySelector('.text__description');
+const hashtagsNode = formNode.querySelector('.text__hashtags');
 
 const validation = new Pristine(formNode, {
   classTo: 'img-upload__field-wrapper',
