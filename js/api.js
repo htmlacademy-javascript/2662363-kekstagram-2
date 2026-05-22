@@ -1,4 +1,10 @@
-export const getPhotos = () => fetch('https://31.javascript.htmlacademy.pro/kekstagram/data')
+const SERVER = 'https://31.javascript.htmlacademy.pro/kekstagram';
+const EndPoints = {
+  GET: '/data',
+  POST: '/'
+};
+
+export const getPhotos = () => fetch(`${SERVER}${EndPoints.GET}`)
   .then((response) => {
     if (!response.ok) {
       throw new Error();
@@ -6,7 +12,7 @@ export const getPhotos = () => fetch('https://31.javascript.htmlacademy.pro/keks
     return response.json();
   });
 
-export const postPhoto = (body) => fetch('https://31.javascript.htmlacademy.pro/kekstagram/',
+export const postPhoto = (body) => fetch(`${SERVER}${EndPoints.POST}`,
   {
     method: 'post',
     body

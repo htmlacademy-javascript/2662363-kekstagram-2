@@ -1,6 +1,5 @@
-/* eslint-disable no-use-before-define */
-
 const COMMENTS_STEP = 5;
+
 const bodyNode = document.body;
 const modalNode = document.querySelector('.big-picture');
 const closeButtonNode = modalNode.querySelector('.big-picture__cancel');
@@ -24,8 +23,6 @@ const showModal = (isVisible = true) => {
   if (isVisible) {
     modalNode.classList.remove('hidden');
     bodyNode.classList.add('modal-open');
-
-
     document.addEventListener('keydown', onDocumentKeydown);
     return;
   }
@@ -35,11 +32,11 @@ const showModal = (isVisible = true) => {
   document.removeEventListener('keydown', onDocumentKeydown);
 };
 
-const onDocumentKeydown = (evt) => {
+function onDocumentKeydown(evt) {
   if (evt.key === 'Escape') {
     showModal(false);
   }
-};
+}
 
 const renderStatistic = () => {
   commentsShownNode.textContent = renderedComments;

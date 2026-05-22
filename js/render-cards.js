@@ -5,7 +5,14 @@ const cardsContainerNode = document.querySelector('.pictures');
 
 let localPhotos;
 
+const clearPhotos = () => {
+  document.querySelectorAll('.picture').forEach((item) => {
+    item.remove();
+  });
+};
+
 export const renderCards = (pictures) => {
+  clearPhotos();
   localPhotos = [...pictures];
   const fragment = document.createDocumentFragment();
   pictures.forEach(({ url, description, comments, likes, id }) => {
