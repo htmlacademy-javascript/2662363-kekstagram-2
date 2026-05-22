@@ -2,7 +2,6 @@ import { isValid, resetValidation } from './validation.js';
 import { resetScale } from './scale.js';
 import { resetEffects } from './effects.js';
 import { Popups, showPopup } from './popups.js';
-import { postPhoto } from './api.js';
 
 const SubmitButtonCaptions = {
   IDLE: 'Опубликовать',
@@ -43,7 +42,12 @@ formNode.addEventListener('submit', (evt) => {
   evt.preventDefault();
   if (isValid()) {
     blockSubmit();
-    postPhoto(new FormData(formNode))
+    fetch('https://31.javascript.htmlacademy.pro/kekstagram/',
+      {
+        method: 'post',
+        body: new FormData(formNode)
+      }
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error();
@@ -58,7 +62,7 @@ formNode.addEventListener('submit', (evt) => {
         blockSubmit(false);
       })
       .catch(() => {
-        //show error popup
+        // show error popup
         showPopup(Popups.ERROR);
       });
   }

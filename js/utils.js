@@ -15,7 +15,7 @@ export const getRandomNumber = (min, max) => {
 export const getRandomElement = (items) => items[getRandomNumber(0, items.length - 1)];
 
 
-export const showErrorBannner = () => {
+export const showErrorBanner = () => {
   const errorBanner = errorBannerTemplate.cloneNode(true);
   bodyNode.append(errorBanner);
   setTimeout(() => {

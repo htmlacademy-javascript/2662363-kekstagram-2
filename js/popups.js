@@ -15,14 +15,14 @@ export const showPopup = (type) => {
   const popup = templates[type].cloneNode(true);
   bodyNode.append(popup);
 
-  const onDocumentKeydown = ({key}) => {
+  const onDocumentKeydown = ({ key }) => {
     if (key === 'Escape') {
       popup.remove();
       document.removeEventListener('keydown', onDocumentKeydown);
     }
   };
 
-  popup.addEventListener('click', ({target}) => {
+  popup.addEventListener('click', ({ target }) => {
     if (target.classList.contains(type) || target.classList.contains(`${type}__button`)) {
       popup.remove();
       document.removeEventListener('keydown', onDocumentKeydown);

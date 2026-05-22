@@ -9,6 +9,6 @@ export const getPhotos = () => fetch('https://31.javascript.htmlacademy.pro/keks
 export const postPhoto = (body) => fetch('https://31.javascript.htmlacademy.pro/kekstagram/',
   {
     method: 'post',
-    body,
+    body
   }
 );

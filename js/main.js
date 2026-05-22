@@ -1,7 +1,7 @@
 import { getPhotos } from './api.js';
 import { renderCards } from './render-cards.js';
 import './form.js';
-import { showErrorBannner } from './utils.js';
+import { showErrorBanner } from './utils.js';
 
 getPhotos()
   .then((photos) => {
@@ -9,5 +9,5 @@ getPhotos()
     renderCards(photos);
   })
   .catch(() => {
-    showErrorBannner();
+    showErrorBanner();
   });
